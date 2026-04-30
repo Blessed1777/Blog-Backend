@@ -87,14 +87,10 @@ WSGI_APPLICATION = 'blogAPI.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 # Add these at the top of your settings.py
-import os
+
 
 
 # Replace the DATABASES section of your settings.py with this
-tmpPostgres = urlparse(os.getenv("DATABASE_URL"))
-
-
-
 DATABASES = {
     'default': dj_database_url.parse(config("DATABASE_URL"))
 }
